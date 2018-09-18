@@ -4,9 +4,9 @@
   "description": "React project from scratch.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot",
+    "start": "webpack-dev-server --mode development",
     "build": "webpack --config ./webpack.config.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "setupFiles": [
     "./src/setupTests.js"
@@ -15,8 +15,15 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy"
     }
@@ -46,6 +53,8 @@
   "dependencies": {
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-hot-loader": "^4.3.7"
+    "react-hot-loader": "^4.3.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   }
 }
