@@ -3,14 +3,14 @@ import React, { Component } from "react";
 import './App.css';
 import { hot } from "react-hot-loader";
 import Routes from './routes';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         <Routes />
-      </BrowserRouter>
+      </Router>
     );
   }
 }
