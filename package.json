@@ -26,7 +26,8 @@
     ],
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy"
-    }
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js"
   },
   "author": "Manolo Alvarez Foro",
   "license": "MIT",
@@ -36,25 +37,36 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.11",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-to-json": "^3.3.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
+    "node-sass": "^4.9.3",
     "react-test-renderer": "^16.5.1",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
-    "webpack": "^4.18.1",
+    "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
+    "apollo-boost": "^0.1.16",
+    "graphql": "^14.0.2",
     "react": "^16.5.1",
+    "react-apollo": "^2.2.4",
     "react-dom": "^16.5.1",
     "react-hot-loader": "^4.3.7",
+    "react-icons": "^3.1.0",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "recompose": "^0.30.0"
   }
 }

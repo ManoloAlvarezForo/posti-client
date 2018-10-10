@@ -3,10 +3,9 @@
     "env",
     "react"
   ],
-  "sourceMaps": true,
   "plugins": [
     "react-hot-loader/babel",
-    "transform-class-properties",
-    "transform-regenerator"
+    "transform-regenerator",
+    "babel-plugin-transform-object-rest-spread"
   ]
 }
