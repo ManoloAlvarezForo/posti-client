@@ -1,4 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
+// CSS.
+import './Main.css'
 
 // Components.
 import PostSearcher from '../../components/Post/PostSearcher';
@@ -12,13 +16,13 @@ class Main extends React.Component {
     render() {
         return (
             <div style={styles.mainContent}>
-                <div style={styles.headerStyles}>
-                    <div style={{ width: '740px', display: 'flex', flexDirection: 'row', alignItems: 'center', marginRight: '25px' }}>
-                        <div style={styles.title}>Posti</div>
+                <div className="header-background" style={styles.headerStyles}>
+                    <div className="default-center-width" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginRight: '25px' }}>
+                        <div style={styles.title}>Postii</div>
                         <div style={{ display: 'flex', flexDirection: 'row', margin: '0 20px', marginLeft: 'auto' }}>
-                            <nav>
-                                <a href="/html/">Home</a> |
-                                <a href="/css/">Categories</a>
+                            <nav className="navigation-main">
+                                <Link style={{fontFamily: 'monospace', fontSize: '1.8rem'}} to="/">Home</Link>
+                                <Link style={{fontFamily: 'monospace', fontSize: '1.8rem'}} to="/">Categories</Link>
                             </nav>
                         </div>
                         <PostSearcher />
@@ -41,15 +45,18 @@ const styles = {
         height: '64px',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#e4e4e4',
-        fontWeight: 'bold'
+        backgroundColor: 'var(--primary-color)',
+        fontWeight: 'bold',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)'
     },
     title: {
         textAlign: 'center',
         fontSize: '3rem',
         height: '90%',
         alignItems: 'center',
-        display: 'flex'
+        display: 'flex',
+        fontFamily: 'monospace',
+        color: 'white'
     },
     postsStyles: {
         display: 'flex',

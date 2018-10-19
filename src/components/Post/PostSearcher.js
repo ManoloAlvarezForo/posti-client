@@ -1,6 +1,7 @@
 import React from 'react';
-import FullScreenSearcher from '../Search/FullScreenSearcher';
 
+// Components.
+import FullScreenSearcher from '../Search/FullScreenSearcher';
 
 class PostSearcher extends React.Component {
         constructor(props) {
@@ -20,5 +21,6 @@ class PostSearcher extends React.Component {
             )
         }
 }
+
 
 export default PostSearcher;

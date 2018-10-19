@@ -1,7 +1,11 @@
-import {POSTS_URL} from '../utils/const'
+import {POSTS_URL, CAT_RANDOM_IMAGE} from '../utils/const'
 
-export function getPosts() {
-   return fetch(POSTS_URL)
+export const getPosts = async () => {
+   return await apiGET(POSTS_URL);
+}
+
+function apiGET(url) {
+    return fetch(url)
             .then(response => response.json())
             .then(json => {
                 return json;

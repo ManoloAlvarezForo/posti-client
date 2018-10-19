@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
+// Styles.
+import './Post.css'
+
+//Components.
 import PostSearchItems from './PostSearchItems';
 
   const  PostSearchFullScreen = ({
@@ -15,11 +19,11 @@ import PostSearchItems from './PostSearchItems';
             <button className="close-button"
               onClick={_handleClose}>X</button>
             <label>Search</label>
-            <input type="text"
+            <input style={{borderBottom: 'solid 2px #2d373c'}} type="text"
               name="searchlarge"
               onChange={_handleChange} />
             <div style={styles.searchContent}>
-              <PostSearchItems query={query}/>
+              <PostSearchItems query={query} _handleClose={_handleClose}/>
             </div>
           </div>
         </div>

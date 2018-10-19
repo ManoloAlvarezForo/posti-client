@@ -6,6 +6,10 @@
   "plugins": [
     "react-hot-loader/babel",
     "transform-regenerator",
-    "babel-plugin-transform-object-rest-spread"
+    "babel-plugin-transform-object-rest-spread",
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
   ]
 }

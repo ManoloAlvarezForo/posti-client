@@ -1,0 +1,20 @@
+.navigation-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation-main a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+
+.navigation-main a:hover {
+    text-decoration: underline;
+}
+
+.header-background {
+    background: var(--background-old-browsers);
+    background: var(--background-chrome-safari);
+    background: var(--background-new-browsers);
+}

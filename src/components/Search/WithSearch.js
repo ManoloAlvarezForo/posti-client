@@ -39,8 +39,7 @@ const WithSearch = (WrapperComponent) => {
         }
 
         _handleClose = (e) => {
-            e.preventDefault();
-            this.setState({ showLargeSearch: { display: 'none' } }, () => {
+            (e) ? e.preventDefault() : this.setState({ showLargeSearch: { display: 'none' } }, () => {
                 this._form.search.focus();
                 this._form.search.value = "";
             });
@@ -53,7 +52,9 @@ const WithSearch = (WrapperComponent) => {
                         <Search
                             name="search"
                             onChange={this._handleChange} />
-                        <WrapperComponent showLargeSearch={this.state.showLargeSearch} _handleChange={this._handleChange}
+                        <WrapperComponent
+                            showLargeSearch={this.state.showLargeSearch}
+                            _handleChange={this._handleChange}
                             _handleClose={this._handleClose}
                             {...this.props} />
                     </form>

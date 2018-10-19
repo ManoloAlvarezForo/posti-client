@@ -1,11 +1,10 @@
 
-import React, { Component } from "react";
+import React from "react";
 import './App.css';
 import './App.scss';
 import { hot } from "react-hot-loader";
 import Routes from './routes';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ApolloProvider } from "react-apollo";
 
 const App = () => {
   return (

@@ -1,30 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom';
+// Styles.
 import './Post.css';
 
-const Post = ({ title, body, image = 'image', author}) => {
+// Utils.
+import {getImageUrl} from '../../utils/Generator';
+
+const DEFAULT_TYPE = 'TECHNOLOGY';
+const DEFAULT_DATE = 'Sept 19';
+
+const Post = ({ title, body, author, postId}) => {
     return (
-        <a href="" className="main-content">
+        <Link href="" className="main-content" to={`/${postId}`}>
             <article className="article-post">
                 <div className="text-content">
-                    <div className="category">TECHNOLOGY</div>
+                    <div className="category">{DEFAULT_TYPE}</div>
                     <div className="ellipsis title">{title}</div>
                     <div className="ellipsis body-content">{body}</div>
                     <div className="details">
                         <div className="details-author">{author}</div>
-                        <div className="details-date">Sept 19</div>
+                        <div className="details-date">{DEFAULT_DATE}</div>
                     </div>
                 </div>
-                <div className="details-image">{image}</div>
+                <div className="details-image">
+                 <img style={styles.image} src={getImageUrl()} alt=""/>
+                </div>
             </article>
-        </a>
+        </Link>
     )
+}
+
+const styles = {
+    image: {width: '100%', height: '100%', borderRadius: '5px', maxHeight: '220px'}
 }
 
 Post.propTypes = {
     title: PropTypes.string,
-    body: PropTypes.string,
-    image: PropTypes.string
+    body: PropTypes.string
 }
 
 export default Post;
