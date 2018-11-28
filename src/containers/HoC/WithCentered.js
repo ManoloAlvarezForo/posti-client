@@ -22,8 +22,14 @@ const WithCentered = (CenterComponent) => {
     const styles = {
         listContent: {
             marginTop: '10px',
+            marginBottom: '50px',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+            padding: '50px 70px 0 70px',
+            backgroundColor: '#ffff',
+            borderRadius: '5px',
+            height: '100%'
         },
         mainContent: {
             display: 'flex',

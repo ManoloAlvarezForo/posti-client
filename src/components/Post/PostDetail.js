@@ -59,7 +59,7 @@ class PostDetail extends React.Component {
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 <h3 style={{color: 'white', height: '15px', alignItems: 'center', display: 'flex', padding: '10px', borderRadius: '5px', backgroundColor: '#f74872'}}>{COMMENTS_TEXT}</h3>
-                                <Comments  parentId={postId} isToPost={true} />
+                                <Comments  parentId={postId} isToPost={true} style={{marginBottom: '70px'}} />
                             </div>
                         </div>
 

@@ -23,6 +23,10 @@ class PaginatedPostList extends React.Component {
             backButtonStyles: {
                 pointerEvents: 'none',
                 color: '#7d7d7d'
+            },
+            inactiveNextButton: {
+                pointerEvents: 'none',
+                color: '#7d7d7d'
             }
         }
     }
@@ -82,7 +86,6 @@ class PaginatedPostList extends React.Component {
                 {({ loading, error, data }) => {
                     if (loading) return <div>Loading...</div>
                     if (error) return `Error!: ${error}`
-
                     return <div>
                         {
                             data.postsPaginated.posts.map((post, index) =>
@@ -105,7 +108,7 @@ class PaginatedPostList extends React.Component {
                             pagesNumber={data.postsPaginated.pagesNumber}
                             initPage={this.state.initPage}
                             backButtonStyles={this.state.backButtonStyles}
-                            nextButtonStyles={this.state.nextButtonStyles}
+                            nextButtonStyles={(this.state.limit <= data.postsPaginated.count) ? this.state.nextButtonStyles : this.state.inactiveNextButton}
                         />
                     </div>
                 }}
