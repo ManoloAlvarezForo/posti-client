@@ -13,7 +13,7 @@ const Comment = ({parentId, email, body, isToPost}) => {
             <div style={styles.commentContent}>
                 <img style={styles.commentImage} src={getImageUrl()} alt="" />
                 <div style={styles.commentText}>
-                    <div style={styles.contentBody}><b style={styles.commentEmail}>{email}</b>{body}</div>
+                    <div style={styles.contentBody}><b style={styles.commentEmail}>{`${email}:`}</b>{body}</div>
                 </div>
             </div>
             <div style={styles.commentsContent}>
@@ -52,8 +52,10 @@ const styles = {
         flexDirection: 'column', 
         width: '90%',
         backgroundColor: '#e6e6e6',
-        padding: '4px',
-        borderRadius: '4px'
+        padding: '0 13px',
+        borderRadius: '5px',
+        justifyContent: 'center',
+        alignItems: 'flex-start'
     },
     commentEmail: { 
         color: '#607D8B',

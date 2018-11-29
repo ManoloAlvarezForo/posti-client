@@ -32,34 +32,30 @@ class PostDetail extends React.Component {
                                     <img style={styles.image} src={getImageUrl()} alt="" />
                                 </div>
                                 <h1>{data.post.title}</h1>
-                                <p>{data.post.body} {data.post.body} {data.post.body} {data.post.body}</p>
+                                <p>{data.post.body} {data.post.body} </p>
                                 <p>{data.post.body} </p>
-                                <p>{data.post.body} {data.post.body} {data.post.body}</p>
-                                <p>{data.post.body} {data.post.body} {data.post.body} {data.post.body}</p>
                                 <h1>1) {data.post.title}</h1>
                                 <div className="details-image-full">
                                     <img style={styles.image} src={getImageUrl()} alt="" />
                                 </div>
                                 <p>{data.post.body} </p>
-                                <p>{data.post.body} {data.post.body} {data.post.body}</p>
-                                <p>{data.post.body} {data.post.body} {data.post.body} {data.post.body} {data.post.body}</p>
-                                <p>{data.post.body} {data.post.body} </p>
+                                <p>{data.post.body}  </p>
+                                <p>{data.post.body} </p>
                                 <h1>2) {data.post.title}</h1>
                                 <div className="details-image-full">
                                     <img style={styles.image} src={getImageUrl()} alt="" />
                                 </div>
-                                <p>{data.post.body} {data.post.body} {data.post.body} {data.post.body} {data.post.body}</p>
-                                <p>{data.post.body} {data.post.body} {data.post.body} {data.post.body} {data.post.body}</p>
+                                <p>{data.post.body} {data.post.body} </p>
                                 <h1>3) {data.post.title}</h1>
                                 <div className="details-image-full">
                                     <img style={styles.image} src={getImageUrl()} alt="" />
                                 </div>
-                                <p>{data.post.body} {data.post.body} {data.post.body}</p>
-                                <p>{data.post.body} {data.post.body}</p>
+                                <p>{data.post.body} </p>
+                                <p>{data.post.body} </p>
                             </div>
-                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '70px' }}>
                                 <h3 style={{color: 'white', height: '15px', alignItems: 'center', display: 'flex', padding: '10px', borderRadius: '5px', backgroundColor: '#f74872'}}>{COMMENTS_TEXT}</h3>
-                                <Comments  parentId={postId} isToPost={true} style={{marginBottom: '70px'}} />
+                                <Comments  parentId={postId} isToPost={true} style={{marginBottom: '20px'}} />
                             </div>
                         </div>
 

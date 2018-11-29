@@ -33,7 +33,7 @@ class PaginatedPostList extends React.Component {
 
     _nextPage = () => {
 
-        if (this.state.initPage + 1 === this._pagination.props.pagesNumber) {
+        (this.state.initPage + 1 === this._pagination.props.pagesNumber) ?
             this.setState({
                 initPage: this.state.initPage + 1,
                 offset: this.state.offset + 1,
@@ -41,8 +41,7 @@ class PaginatedPostList extends React.Component {
                     pointerEvents: 'none',
                     color: '#7d7d7d'
                 }
-            })
-        } else {
+            }):
             this.setState({
                 initPage: this.state.initPage + 1,
                 offset: this.state.offset + 1,
@@ -51,7 +50,7 @@ class PaginatedPostList extends React.Component {
                     color: ''
                 }
             })
-        }
+
     }
 
     _backPage = () => {
@@ -86,31 +85,35 @@ class PaginatedPostList extends React.Component {
                 {({ loading, error, data }) => {
                     if (loading) return <div>Loading...</div>
                     if (error) return `Error!: ${error}`
-                    return <div>
-                        {
-                            data.postsPaginated.posts.map((post, index) =>
-                                <div key={index} style={{ margin: '5px' }}>
-                                    <Post
-                                        title={post.title}
-                                        body={post.body}
-                                        image={post.image}
-                                        author={post.author.name}
-                                        postId={post.id}
-                                    />
-                                    <div className="divider"></div>
-                                </div>
-                            )
-                        }
-                        <Pagination ref={p => this._pagination = p}
-                            onClickBack={this._backPage}
-                            onClickNext={this._nextPage}
-                            count={data.postsPaginated.count}
-                            pagesNumber={data.postsPaginated.pagesNumber}
-                            initPage={this.state.initPage}
-                            backButtonStyles={this.state.backButtonStyles}
-                            nextButtonStyles={(this.state.limit <= data.postsPaginated.count) ? this.state.nextButtonStyles : this.state.inactiveNextButton}
-                        />
-                    </div>
+                    return (
+                        data.postsPaginated.posts.length === 0 ?
+                            <div>NO DATA</div> :
+                            <div>
+                                {
+                                    data.postsPaginated.posts.map((post, index) =>
+                                        <div key={index} style={{ margin: '5px' }}>
+                                            <Post
+                                                title={post.title}
+                                                body={post.body}
+                                                image={post.image}
+                                                author={post.author.name}
+                                                postId={post.id}
+                                            />
+                                            <div className="divider"></div>
+                                        </div>
+                                    )
+                                }
+                                <Pagination ref={p => this._pagination = p}
+                                    onClickBack={this._backPage}
+                                    onClickNext={this._nextPage}
+                                    count={data.postsPaginated.count}
+                                    pagesNumber={data.postsPaginated.pagesNumber}
+                                    initPage={this.state.initPage}
+                                    backButtonStyles={this.state.backButtonStyles}
+                                    nextButtonStyles={(this.state.limit <= data.postsPaginated.count) ? this.state.nextButtonStyles : this.state.inactiveNextButton}
+                                />
+                            </div>
+                    )
                 }}
             </Query>
         )
